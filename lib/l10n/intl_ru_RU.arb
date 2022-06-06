@@ -1,0 +1,17 @@
+{
+    "counterValue": "Значение счетчика",
+    "auth": "Авторизация",
+    "inputLoginAndPassword": "Введите логин и пароль",
+    "login": "Логин",
+    "password": "Пароль",
+    "inputErrorCheckLogin": "Введите логин",
+    "inputErrorLoginIsShort": "Логин должен содержать не менее 3 символов",
+    "inputErrorCheckPassword": "Введите пароль",
+    "inputErrorPasswordIsShort": "Пароль должен содержать не менее 8 символов",
+    "tryAgain": "Попробуйте снова",
+    "close": "Закрыть",
+    "signIn": "Вход",
+    "language": "Язык",
+    "english": "Английский",
+    "russian": "Русский"
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_code_lesson_2/generated/l10n.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -8,17 +9,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _logincontroller = TextEditingController();
-  final _passwordcontroller = TextEditingController();
+  String? login;
+  String? password;
+
   final formKey = GlobalKey<FormState>();
 
   register() {
-    formKey.currentState?.validate();
-    final login = _logincontroller.text;
-    final password = _passwordcontroller.text;
-    
-    if (login.length >= 3 && password.length >= 8) {
+    final isValidated = formKey.currentState?.validate() ?? false;
+
+    if (isValidated) {
       FocusScope.of(context).unfocus();
+      formKey.currentState?.save();
       if (login == 'qwerty' && password == '123456ab') {
         Navigator.pushNamed(context, '/home');
       } else {
@@ -32,10 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Попробуйте снова'),
+          title: Text(S.of(context).tryAgain),
           actions: [
             ElevatedButton(
-              child: const Text('Закрыть'),
+              child: Text(S.of(context).close),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Авторизация'),
+        title: Text(S.of(context).auth),
         centerTitle: true,
       ),
       body: Padding(
@@ -60,39 +61,45 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             children: <Widget>[
               const Spacer(),
-              const Text(
-                'Введите логин и пароль',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+              Text(
+                S.of(context).inputLoginAndPassword,
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
               ),
               const SizedBox(height: 8),
               TextFormField(
-                controller: _logincontroller,
                 maxLength: 8,
                 validator: (value) {
-                  if (value!.length < 3) {
-                    return 'Логин должен содержать не менее 3 символов';
+                  if (value!.trim().isEmpty) return S.of(context).inputErrorCheckLogin;
+                  if (value.length < 3) {
+                    return S.of(context).inputErrorLoginIsShort;
                   }
                   return null;
                 },
-                decoration: const InputDecoration(
-                  hintText: 'Логин',
-                  hintStyle: TextStyle(fontSize: 19),
+                onSaved: (value) {
+                  login = value;
+                },
+                decoration: InputDecoration(
+                  labelText: S.of(context).login,
                 ),
               ),
               const SizedBox(height: 6),
               TextFormField(
-                controller: _passwordcontroller,
                 obscureText: true,
                 maxLength: 16,
                 validator: (value) {
-                  if (value!.length < 8) {
-                    return 'Пароль должен содержать не менее 8 символов';
+                  if (value!.trim().isEmpty) return S.of(context).inputErrorCheckPassword;
+                  if (value.length < 8) {
+                    return S.of(context).inputErrorPasswordIsShort;
                   }
                   return null;
                 },
-                decoration: const InputDecoration(
-                  hintText: 'Пароль',
-                  hintStyle: TextStyle(fontSize: 19),
+                onSaved: (value) {
+                  password = value;
+                },
+                decoration: InputDecoration(
+                  hintText: S.of(context).password,
+                  hintStyle: const TextStyle(fontSize: 19),
                 ),
               ),
               const Spacer(),
@@ -100,10 +107,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () => register(),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
-                      'Вход',
-                      style: TextStyle(fontSize: 18),
+                      S.of(context).signIn,
+                      style: const TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
