@@ -199,6 +199,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Alive`
+  String get alive {
+    return Intl.message(
+      'Alive',
+      name: 'alive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dead`
+  String get dead {
+    return Intl.message(
+      'Dead',
+      name: 'dead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total persons: {total}`
+  String personsTotal(Object total) {
+    return Intl.message(
+      'Total persons: $total',
+      name: 'personsTotal',
+      desc: '',
+      args: [total],
+    );
+  }
+
+  /// `No data`
+  String get noData {
+    return Intl.message(
+      'No data',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Find a person`
+  String get findPerson {
+    return Intl.message(
+      'Find a person',
+      name: 'findPerson',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

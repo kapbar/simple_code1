@@ -1,4 +1,9 @@
 {
+    "@personsTotal": {
+        "placeholders": {
+            "total": {}
+        }
+    },
     "counterValue": "Counter value",
     "auth": "Authorization",
     "inputLoginAndPassword": "Input login and password",
@@ -13,5 +18,10 @@
     "signIn": "Sign in",
     "language": "Language",
     "english": "English",
-    "russian": "Russian"
+    "russian": "Russian",
+    "alive": "Alive",
+    "dead": "Dead",
+    "personsTotal": "Total persons: {total}",
+    "noData": "No data",
+    "findPerson": "Find a person"
 }

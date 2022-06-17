@@ -70,7 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 maxLength: 8,
                 validator: (value) {
-                  if (value!.trim().isEmpty) return S.of(context).inputErrorCheckLogin;
+                  if (value!.trim().isEmpty) {
+                    return S.of(context).inputErrorCheckLogin;
+                  }
                   if (value.length < 3) {
                     return S.of(context).inputErrorLoginIsShort;
                   }
@@ -88,7 +90,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: true,
                 maxLength: 16,
                 validator: (value) {
-                  if (value!.trim().isEmpty) return S.of(context).inputErrorCheckPassword;
+                  if (value!.trim().isEmpty) {
+                    return S.of(context).inputErrorCheckPassword;
+                  }
                   if (value.length < 8) {
                     return S.of(context).inputErrorPasswordIsShort;
                   }

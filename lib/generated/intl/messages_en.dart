@@ -20,12 +20,17 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(total) => "Total persons: ${total}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alive": MessageLookupByLibrary.simpleMessage("Alive"),
         "auth": MessageLookupByLibrary.simpleMessage("Authorization"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
         "counterValue": MessageLookupByLibrary.simpleMessage("Counter value"),
+        "dead": MessageLookupByLibrary.simpleMessage("Dead"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "findPerson": MessageLookupByLibrary.simpleMessage("Find a person"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Enter login"),
         "inputErrorCheckPassword":
@@ -38,7 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Input login and password"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "noData": MessageLookupByLibrary.simpleMessage("No data"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "personsTotal": m0,
         "russian": MessageLookupByLibrary.simpleMessage("Russian"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try again")
