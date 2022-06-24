@@ -60,11 +60,11 @@ class S {
     );
   }
 
-  /// `Authorization`
-  String get auth {
+  /// `Settings`
+  String get settings {
     return Intl.message(
-      'Authorization',
-      name: 'auth',
+      'Settings',
+      name: 'settings',
       desc: '',
       args: [],
     );
@@ -245,6 +245,66 @@ class S {
     return Intl.message(
       'Find a person',
       name: 'findPerson',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account yet`
+  String get dontHaveAnAccountHint {
+    return Intl.message(
+      'Don\'t have an account yet',
+      name: 'dontHaveAnAccountHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create`
+  String get create {
+    return Intl.message(
+      'Create',
+      name: 'create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong login or password`
+  String get wrongLoginOrPassword {
+    return Intl.message(
+      'Wrong login or password',
+      name: 'wrongLoginOrPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Persons`
+  String get persons {
+    return Intl.message(
+      'Persons',
+      name: 'persons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
       desc: '',
       args: [],
     );

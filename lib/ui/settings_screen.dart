@@ -1,37 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:simple_code_lesson_2/constants/app_colors.dart';
+import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
+import 'package:simple_code_lesson_2/widgets/app_nav_bar.dart';
 
-class HomeScreen extends StatefulWidget {
-  final String title;
-  const HomeScreen({Key? key, required this.title}) : super(key: key);
+class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _decrementCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.ligtTheme,
       appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
+        title: Text(
+          S.of(context).settings,
+          style: AppStyles.s20w500,
+        ),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        foregroundColor: AppColors.mainText,
+        elevation: 0.0,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -65,29 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          const Spacer(),
-          Text('${S.of(context).counterValue}:',
-              style: const TextStyle(fontSize: 24)),
-          Text('$_counter', style: Theme.of(context).textTheme.headline4),
-          const Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 30.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  child: const Icon(Icons.add),
-                ),
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  child: const Icon(Icons.remove),
-                ),
-              ],
-            ),
-          ),
         ],
       ),
+      bottomNavigationBar: const AppNavBar(current: 1),
     );
   }
 }

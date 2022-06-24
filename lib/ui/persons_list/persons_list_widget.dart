@@ -6,6 +6,7 @@ import 'package:simple_code_lesson_2/generated/l10n.dart';
 import 'package:simple_code_lesson_2/ui/persons_list/widgets/grid_view_widget.dart';
 import 'package:simple_code_lesson_2/ui/persons_list/widgets/list_view_widget.dart';
 import 'package:simple_code_lesson_2/ui/persons_list/widgets/search_person_widget.dart';
+import 'package:simple_code_lesson_2/widgets/app_nav_bar.dart';
 
 class PersonsListWidget extends StatefulWidget {
   const PersonsListWidget({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class _PersonsListWidgetState extends State<PersonsListWidget> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColors.ligtTheme,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
@@ -57,6 +59,7 @@ class _PersonsListWidgetState extends State<PersonsListWidget> {
             ],
           ),
         ),
+        bottomNavigationBar: const AppNavBar(current: 0),
       ),
     );
   }

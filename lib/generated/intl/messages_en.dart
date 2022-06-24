@@ -25,11 +25,14 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alive": MessageLookupByLibrary.simpleMessage("Alive"),
-        "auth": MessageLookupByLibrary.simpleMessage("Authorization"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
         "counterValue": MessageLookupByLibrary.simpleMessage("Counter value"),
+        "create": MessageLookupByLibrary.simpleMessage("Create"),
         "dead": MessageLookupByLibrary.simpleMessage("Dead"),
+        "dontHaveAnAccountHint":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account yet"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
         "findPerson": MessageLookupByLibrary.simpleMessage("Find a person"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Enter login"),
@@ -44,10 +47,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "noData": MessageLookupByLibrary.simpleMessage("No data"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "persons": MessageLookupByLibrary.simpleMessage("Persons"),
         "personsTotal": m0,
         "russian": MessageLookupByLibrary.simpleMessage("Russian"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
-        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again")
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
+        "wrongLoginOrPassword":
+            MessageLookupByLibrary.simpleMessage("Wrong login or password")
       };
 }

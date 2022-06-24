@@ -5,7 +5,7 @@
         }
     },
     "counterValue": "Значение счетчика",
-    "auth": "Авторизация",
+    "settings": "Настройки",
     "inputLoginAndPassword": "Введите логин и пароль",
     "login": "Логин",
     "password": "Пароль",
@@ -15,7 +15,7 @@
     "inputErrorPasswordIsShort": "Пароль должен содержать не менее 8 символов",
     "tryAgain": "Попробуйте снова",
     "close": "Закрыть",
-    "signIn": "Вход",
+    "signIn": "Войти",
     "language": "Язык",
     "english": "Английский",
     "russian": "Русский",
@@ -23,5 +23,11 @@
     "dead": "Мертвый",
     "personsTotal": "Всего персонажей: {total}",
     "noData": "Нет данных",
-    "findPerson": "Найти персонажа"
+    "findPerson": "Найти персонажа",
+    "dontHaveAnAccountHint": "Ещё нет аккаунта",
+    "create": "Создать",
+    "error": "Ошибка",
+    "wrongLoginOrPassword": "Введен неверный логин или пароль",
+    "persons": "Персонажи",
+    "ok": "Ok"
 }

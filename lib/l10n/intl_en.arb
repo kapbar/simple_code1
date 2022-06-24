@@ -5,7 +5,7 @@
         }
     },
     "counterValue": "Counter value",
-    "auth": "Authorization",
+    "settings": "Settings",
     "inputLoginAndPassword": "Input login and password",
     "login": "Login",
     "password": "Password",
@@ -23,5 +23,11 @@
     "dead": "Dead",
     "personsTotal": "Total persons: {total}",
     "noData": "No data",
-    "findPerson": "Find a person"
+    "findPerson": "Find a person",
+    "dontHaveAnAccountHint": "Don't have an account yet",
+    "create": "Create",
+    "error": "Error",
+    "wrongLoginOrPassword": "Wrong login or password",
+    "persons": "Persons",
+    "ok": "Ok"
 }

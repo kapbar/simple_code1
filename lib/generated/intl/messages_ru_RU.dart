@@ -25,12 +25,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "alive": MessageLookupByLibrary.simpleMessage("Живой"),
-        "auth": MessageLookupByLibrary.simpleMessage("Авторизация"),
         "close": MessageLookupByLibrary.simpleMessage("Закрыть"),
         "counterValue":
             MessageLookupByLibrary.simpleMessage("Значение счетчика"),
+        "create": MessageLookupByLibrary.simpleMessage("Создать"),
         "dead": MessageLookupByLibrary.simpleMessage("Мертвый"),
+        "dontHaveAnAccountHint":
+            MessageLookupByLibrary.simpleMessage("Ещё нет аккаунта"),
         "english": MessageLookupByLibrary.simpleMessage("Английский"),
+        "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "findPerson": MessageLookupByLibrary.simpleMessage("Найти персонажа"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Введите логин"),
@@ -45,10 +48,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Язык"),
         "login": MessageLookupByLibrary.simpleMessage("Логин"),
         "noData": MessageLookupByLibrary.simpleMessage("Нет данных"),
+        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
+        "persons": MessageLookupByLibrary.simpleMessage("Персонажи"),
         "personsTotal": m0,
         "russian": MessageLookupByLibrary.simpleMessage("Русский"),
-        "signIn": MessageLookupByLibrary.simpleMessage("Вход"),
-        "tryAgain": MessageLookupByLibrary.simpleMessage("Попробуйте снова")
+        "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Попробуйте снова"),
+        "wrongLoginOrPassword": MessageLookupByLibrary.simpleMessage(
+            "Введен неверный логин или пароль")
       };
 }

@@ -35,4 +35,16 @@ class AppStyles {
     color: AppColors.neutral3,
     letterSpacing: 1.5,
   );
+  static const s14w400 = TextStyle(
+    fontSize: 14.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.mainText,
+    height: 2.0,
+    leadingDistribution: TextLeadingDistribution.even,
+  );
+  static const s20w500 = TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.mainText,
+  );
 }

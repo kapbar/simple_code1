@@ -10,4 +10,7 @@ class AppColors {
   static const neutral4 = Color(0xFF5B6975);
   static const more1 = Color(0xFF43D049);
   static const more2 = Color(0xFFEB5757);
+  static const darkTheme = Color(0xFF0B1E2D);
+  static const splashBackground = Color(0xFF091824);
+  static const ligtTheme = Color(0xFFFCFCFC);
 }
