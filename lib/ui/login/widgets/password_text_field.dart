@@ -5,26 +5,17 @@ import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
 
-class PasswordTextField extends StatefulWidget {
+class PasswordTextField extends StatelessWidget {
   const PasswordTextField({
     Key? key,
-    this.onSaved,
+    required this.onSaved,
+    required this.obscureText,
+    required this.onPressed,
   }) : super(key: key);
 
   final Function(String?)? onSaved;
-
-  @override
-  State<PasswordTextField> createState() => _PasswordTextFieldState();
-}
-
-class _PasswordTextFieldState extends State<PasswordTextField> {
-  bool _obscureText = true;
-
-  void _toggle() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
-  }
+  final bool obscureText;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +23,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
       style: AppStyles.s16w400.copyWith(
         color: AppColors.mainText,
       ),
-      obscureText: _obscureText,
+      obscureText: obscureText,
       obscuringCharacter: '・',
       decoration: InputDecoration(
         hintText: S.of(context).password,
@@ -49,10 +40,8 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         ),
         suffixIcon: IconButton(
           splashRadius: 8.0,
-          icon: Icon(
-            _obscureText ? Icons.visibility_off : Icons.visibility,
-          ),
-          onPressed: _toggle,
+          icon: const Icon(Icons.visibility),
+          onPressed: onPressed,
         ),
         contentPadding: const EdgeInsets.symmetric(
           vertical: 16.0,
@@ -75,7 +64,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
         }
         return null;
       },
-      onSaved: widget.onSaved,
+      onSaved: onSaved,
     );
   }
 }

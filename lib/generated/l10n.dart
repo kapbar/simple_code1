@@ -220,6 +220,66 @@ class S {
     );
   }
 
+  /// `Man's`
+  String get male {
+    return Intl.message(
+      'Man`s',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Women's`
+  String get female {
+    return Intl.message(
+      'Women`s',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Human`
+  String get man {
+    return Intl.message(
+      'Human',
+      name: 'man',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Alien`
+  String get alien {
+    return Intl.message(
+      'Alien',
+      name: 'alien',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Persons not found`
+  String get personsListIsEmpty {
+    return Intl.message(
+      'Persons not found',
+      name: 'personsListIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong :-(`
+  String get somethingWentWrong {
+    return Intl.message(
+      'Something went wrong :-(',
+      name: 'somethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Total persons: {total}`
   String personsTotal(Object total) {
     return Intl.message(

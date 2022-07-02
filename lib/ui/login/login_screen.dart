@@ -18,6 +18,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   String? login;
   String? password;
+  bool _obscureText = true;
 
   final formKey = GlobalKey<FormState>();
 
@@ -81,9 +82,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: AppStyles.s14w400,
                   ),
                   PasswordTextField(
+                    onPressed: () {
+                      setState(() {
+                        _obscureText = !_obscureText;
+                      });
+                    },
                     onSaved: (value) {
                       password = value;
                     },
+                    obscureText: _obscureText,
                   ),
                   const SizedBox(height: 24.0),
                   ElevatedButton(

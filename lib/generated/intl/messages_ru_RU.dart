@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "alien": MessageLookupByLibrary.simpleMessage("Пришелец"),
         "alive": MessageLookupByLibrary.simpleMessage("Живой"),
         "close": MessageLookupByLibrary.simpleMessage("Закрыть"),
         "counterValue":
@@ -34,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ещё нет аккаунта"),
         "english": MessageLookupByLibrary.simpleMessage("Английский"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
+        "female": MessageLookupByLibrary.simpleMessage("Женский"),
         "findPerson": MessageLookupByLibrary.simpleMessage("Найти персонажа"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Введите логин"),
@@ -47,14 +49,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Введите логин и пароль"),
         "language": MessageLookupByLibrary.simpleMessage("Язык"),
         "login": MessageLookupByLibrary.simpleMessage("Логин"),
+        "male": MessageLookupByLibrary.simpleMessage("Мужской"),
+        "man": MessageLookupByLibrary.simpleMessage("Человек"),
         "noData": MessageLookupByLibrary.simpleMessage("Нет данных"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "password": MessageLookupByLibrary.simpleMessage("Пароль"),
         "persons": MessageLookupByLibrary.simpleMessage("Персонажи"),
+        "personsListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Персонажей не найдено"),
         "personsTotal": m0,
         "russian": MessageLookupByLibrary.simpleMessage("Русский"),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "somethingWentWrong":
+            MessageLookupByLibrary.simpleMessage("Что-то пошло не так :-("),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Попробуйте снова"),
         "wrongLoginOrPassword": MessageLookupByLibrary.simpleMessage(
             "Введен неверный логин или пароль")

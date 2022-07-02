@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_code_lesson_2/constants/app_assets.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
+import 'package:simple_code_lesson_2/generated/l10n.dart';
+import 'package:simple_code_lesson_2/repo/repo_settings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,11 +27,25 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    Future.delayed(
-      const Duration(seconds: 2),
-    ).whenComplete(
-      () {
-        Navigator.pushReplacementNamed(context, '/');
+    final repoSettings = context.read<RepoSettings>();
+    repoSettings.init().whenComplete(
+      () async {
+        var defaultLocale = const Locale('ru', 'RU');
+        final locale = await repoSettings.readLocale();
+        if (locale == 'en') {
+          defaultLocale = const Locale('en');
+        }
+        S.load(defaultLocale).whenComplete(
+          () {
+            Future.delayed(
+              const Duration(seconds: 2),
+            ).whenComplete(
+              () {
+                Navigator.pushReplacementNamed(context, '/');
+              },
+            );
+          },
+        );
       },
     );
     super.initState();

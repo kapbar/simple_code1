@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:simple_code_lesson_2/constants/app_assets.dart';
+import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/datas/persons.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
 
 class ListViewWidget extends StatelessWidget {
-  const ListViewWidget({Key? key}) : super(key: key);
+  const ListViewWidget({Key? key, required this.personList}) : super(key: key);
+  final List<Person> personList;
 
   _statusStyle(String? status) {
     if (status == 'Dead') return AppStyles.s10w500red;
@@ -19,11 +21,24 @@ class ListViewWidget extends StatelessWidget {
     return S.current.noData;
   }
 
+  String _speciesLabel(String? species) {
+    if (species == 'Human') return S.current.man;
+    if (species == 'Alien') return S.current.alien;
+    return S.current.noData;
+  }
+
+  String _genderLabel(String? gender) {
+    if (gender == 'Male') return S.current.male;
+    if (gender == 'Female') return S.current.female;
+    return S.current.noData;
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
       itemCount: personList.length,
       itemBuilder: (BuildContext context, int index) {
+        final urlImage = personList[index].image;
         return InkWell(
           borderRadius: BorderRadius.circular(12.0),
           onTap: () {},
@@ -34,8 +49,15 @@ class ListViewWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(right: 18.0),
                   child: CircleAvatar(
-                    radius: 37,
-                    backgroundImage: AssetImage(AppAssets.images.noAvatar),
+                    radius: 41,
+                    backgroundColor: AppColors.primary,
+                    child: CircleAvatar(
+                      radius: 37,
+                      backgroundImage: urlImage == null
+                          ? AssetImage(AppAssets.images.noAvatar)
+                              as ImageProvider
+                          : NetworkImage(urlImage),
+                    ),
                   ),
                 ),
                 Expanded(
@@ -66,7 +88,7 @@ class ListViewWidget extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              '${personList[index].species ?? S.of(context).noData}, ${personList[index].gender ?? S.of(context).noData}',
+                              '${_speciesLabel(personList[index].species)}, ${_genderLabel(personList[index].gender)}',
                               style: AppStyles.s12w400,
                             ),
                           ),

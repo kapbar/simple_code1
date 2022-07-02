@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
+import 'package:simple_code_lesson_2/repo/repo_settings.dart';
 import 'package:simple_code_lesson_2/widgets/app_nav_bar.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -15,6 +17,7 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
+    final repoSettings = context.read<RepoSettings>();
     return Scaffold(
       backgroundColor: AppColors.ligtTheme,
       appBar: AppBar(
@@ -46,6 +49,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
                 onChanged: (value) async {
+                  if (value == null) return;
                   if (value == 'ru_RU') {
                     await S.load(
                       const Locale('ru', 'RU'),
@@ -57,6 +61,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     );
                     setState(() {});
                   }
+                  repoSettings.saveLocale(value);
                 },
               ),
             ],

@@ -6,13 +6,17 @@ import 'package:simple_code_lesson_2/generated/l10n.dart';
 class SearchPersonWidget extends StatelessWidget {
   const SearchPersonWidget({
     Key? key,
+    this.onChanged,
   }) : super(key: key);
+
+  final ValueChanged<String>? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       child: TextField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           prefixIcon: const Icon(
             Icons.search,
