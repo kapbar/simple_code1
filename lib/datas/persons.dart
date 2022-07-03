@@ -1,5 +1,10 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'location.dart';
 
+part 'persons.g.dart';
+
+@JsonSerializable()
 class Person {
   Person({
     this.id,
@@ -29,21 +34,6 @@ class Person {
   final String? type;
   final String? url;
 
-  factory Person.fromJson(Map<String, dynamic>? json) {
-    if (json == null) return Person();
-    return Person(
-      id: json["id"],
-      name: json["name"],
-      status: json["status"],
-      species: json["species"],
-      type: json["type"],
-      gender: json["gender"],
-      origin: json["origin"] == null ? null : Location.fromJson(json["origin"]),
-      location: json["location"] == null ? null : Location.fromJson(json["location"]),
-      image: json["image"],
-      episode: (json["episode"] as List).map((e) => e as String).toList(),
-      url: json["url"],
-      created: json["created"] == null ? null : DateTime.parse(json["created"]),
-    );
-  }
+  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
+  Map<String, dynamic> toJson() => _$PersonToJson(this);
 }
