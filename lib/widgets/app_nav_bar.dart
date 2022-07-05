@@ -55,6 +55,7 @@ class AppNavBar extends StatelessWidget {
           ),
         ],
         onTap: (index) {
+          if (index == current) return;
           if (index == 0) {
             Navigator.of(context).pushAndRemoveUntil(
               _createRoute(const PersonsListWidget()),

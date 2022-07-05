@@ -38,7 +38,7 @@ class GridViewWidget extends StatelessWidget {
     return GridView.count(
       mainAxisSpacing: 24.0,
       crossAxisSpacing: 14.0,
-      childAspectRatio: 0.90,
+      childAspectRatio: 0.8,
       crossAxisCount: 2,
       padding: const EdgeInsets.symmetric(vertical: 12.0),
       children: personList.map((person) {
