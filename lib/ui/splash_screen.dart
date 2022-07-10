@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_code_lesson_2/constants/app_assets.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';

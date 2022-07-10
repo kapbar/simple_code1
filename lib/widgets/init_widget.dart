@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_code_lesson_2/bloc/persons/persons_bloc.dart';
+import 'package:simple_code_lesson_2/repo/api.dart';
 import 'package:simple_code_lesson_2/repo/repo_persons.dart';
 import 'package:simple_code_lesson_2/repo/repo_settings.dart';
 
@@ -13,16 +15,30 @@ class InitWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
+    return MultiRepositoryProvider(
       providers: [
-        Provider(
+        RepositoryProvider(
+          create: (context) => Api(),
+        ),
+        RepositoryProvider(
           create: (context) => RepoSettings(),
         ),
-        Provider(
-          create: (context) => RepoPersons(),
+        RepositoryProvider(
+          create: (context) => RepoPersons(
+            api: RepositoryProvider.of<Api>(context),
+          ),
         ),
       ],
-      child: child,
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => BlocPersons(
+              repo: RepositoryProvider.of<RepoPersons>(context),
+            )..add(EventPersonsFilterByName('')),
+          ),
+        ],
+        child: child,
+      ),
     );
   }
 }
