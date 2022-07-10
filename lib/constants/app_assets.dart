@@ -10,6 +10,7 @@ class _Images {
   final String morty = 'assets/images/bitmap/morty.png';
   final String rick = 'assets/images/bitmap/rick.png';
   final String noAvatar = 'assets/images/bitmap/no_avatar.png';
+  final String resultSearch = 'assets/images/bitmap/result_search.png';
 }
 
 class _Svg {

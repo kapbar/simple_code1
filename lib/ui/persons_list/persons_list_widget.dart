@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_code_lesson_2/bloc/persons/persons_bloc.dart';
+import 'package:simple_code_lesson_2/constants/app_assets.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
@@ -49,8 +50,7 @@ class PersonsListWidget extends StatelessWidget {
                       ),
                       IconButton(
                         splashRadius: 25.0,
-                        icon: Icon(
-                            isListView.value ? Icons.list : Icons.grid_view),
+                        icon: const Icon(Icons.grid_view),
                         iconSize: 28,
                         color: AppColors.neutral4,
                         onPressed: () {
@@ -87,6 +87,7 @@ class PersonsListWidget extends StatelessWidget {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
+                            Image.asset(AppAssets.images.resultSearch),
                             Flexible(
                               child: Text(S.of(context).personsListIsEmpty),
                             ),
