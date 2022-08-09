@@ -1,39 +1,24 @@
-import 'package:json_annotation/json_annotation.dart';
-
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'location.dart';
-
+part 'persons.freezed.dart';
 part 'persons.g.dart';
 
-@JsonSerializable()
-class Person {
-  Person({
-    this.id,
-    this.name,
-    this.status,
-    this.species,
-    this.type,
-    this.gender,
-    this.origin,
-    this.location,
-    this.image,
-    this.episode,
-    this.url,
-    this.created,
-  });
+@freezed
+class Person with _$Person {
+  const factory Person({
+    DateTime? created,
+    List<String>? episode,
+    String? gender,
+    int? id,
+    String? image,
+    Location? location,
+    String? name,
+    Location? origin,
+    String? species,
+    String? status,
+    String? type,
+    String? url,
+  }) = _Person;
 
-  final DateTime? created;
-  final List<String>? episode;
-  final String? gender;
-  final int? id;
-  final String? image;
-  final Location? location;
-  final String? name;
-  final Location? origin;
-  final String? species;
-  final String? status;
-  final String? type;
-  final String? url;
-
-  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
-  Map<String, dynamic> toJson() => _$PersonToJson(this);
+  factory Person.fromJson(Map<String, Object?> json) => _$PersonFromJson(json);
 }

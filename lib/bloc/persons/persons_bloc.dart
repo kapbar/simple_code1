@@ -1,26 +1,25 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simple_code_lesson_2/datas/persons.dart';
 import 'package:simple_code_lesson_2/repo/repo_persons.dart';
+import 'states.dart';
 
-part 'persons_event.dart';
-part 'persons_state.dart';
+part 'events.dart';
 
 class BlocPersons extends Bloc<EventBlocPersons, StateBlocPersons> {
   BlocPersons({
     required this.repo,
-  }) : super(StatePersonsInitial()) {
+  }) : super(const StateBlocPersons.initial()) {
     on<EventPersonsFilterByName>(
       (event, emit) async {
-        emit(StatePersonsLoading());
+        emit(const StateBlocPersons.loading());
         final result = await repo.filterByName(event.name);
         if (result.errorMessage != null) {
           emit(
-            StatePersonsError(result.errorMessage!),
+            StateBlocPersons.error(result.errorMessage!),
           );
           return;
         }
         emit(
-          StatePersonsData(data: result.personsList!),
+          StateBlocPersons.data(data: result.personsList!),
         );
       },
     );

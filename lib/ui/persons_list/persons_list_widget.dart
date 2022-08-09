@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_code_lesson_2/bloc/persons/persons_bloc.dart';
-import 'package:simple_code_lesson_2/constants/app_assets.dart';
+import 'package:simple_code_lesson_2/bloc/persons/states.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
@@ -64,47 +64,46 @@ class PersonsListWidget extends StatelessWidget {
               Expanded(
                 child: BlocBuilder<BlocPersons, StateBlocPersons>(
                   builder: (context, state) {
-                    if (state is StatePersonsLoading) {
-                      return Row(
+                    return state.when(
+                      initial: () => const SizedBox.shrink(),
+                      loading: () => Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           CircularProgressIndicator(),
                         ],
-                      );
-                    }
-                    if (state is StatePersonsError) {
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Flexible(
-                            child: Text(state.error),
-                          ),
-                        ],
-                      );
-                    }
-                    if (state is StatePersonsData) {
-                      if (state.data.isEmpty) {
+                      ),
+                      data: (data) {
+                        if (data.isEmpty) {
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: Text(S.of(context).personsListIsEmpty),
+                              ),
+                            ],
+                          );
+                        } else {
+                          return ValueListenableBuilder<bool>(
+                            valueListenable: isListView,
+                            builder: (context, isListViewMode, _) {
+                              return isListViewMode
+                                  ? ListViewWidget(personList: data)
+                                  : GridViewWidget(personList: data);
+                            },
+                          );
+                        }
+                      },
+                      error: (error) {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(AppAssets.images.resultSearch),
                             Flexible(
-                              child: Text(S.of(context).personsListIsEmpty),
+                              child: Text(error),
                             ),
                           ],
                         );
-                      } else {
-                        return ValueListenableBuilder<bool>(
-                          valueListenable: isListView,
-                          builder: (context, isListViewMode, _) {
-                            return isListViewMode
-                                ? ListViewWidget(personList: state.data)
-                                : GridViewWidget(personList: state.data);
-                          },
-                        );
-                      }
-                    }
-                    return const SizedBox.shrink();
+                      },
+                    );
                   },
                 ),
               ),
