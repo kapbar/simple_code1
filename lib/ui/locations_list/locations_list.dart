@@ -34,18 +34,21 @@ class LocationsList extends StatelessWidget {
                   if (state is StateLocationsData) {
                     locationTotal = state.data.length;
                   }
-                  return Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          S
-                              .of(context)
-                              .locationsTotal(locationTotal)
-                              .toUpperCase(),
-                          style: AppStyles.s10w500grey,
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 7.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            S
+                                .of(context)
+                                .locationsTotal(locationTotal)
+                                .toUpperCase(),
+                            style: AppStyles.s10w500grey,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 },
               ),

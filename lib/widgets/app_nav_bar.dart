@@ -51,7 +51,10 @@ class AppNavBar extends StatelessWidget {
             label: S.of(context).persons,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.airlines_outlined),
+            icon: SvgPicture.asset(
+              AppAssets.svg.locations,
+              color: current == 1 ? AppColors.primary : AppColors.neutral2,
+            ),
             label: S.of(context).locations,
           ),
           BottomNavigationBarItem(
@@ -76,7 +79,7 @@ class AppNavBar extends StatelessWidget {
               _createRoute(const SettingsScreen()),
               (route) => false,
             );
-          } 
+          }
         },
       ),
     );

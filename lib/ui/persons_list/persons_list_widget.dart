@@ -50,7 +50,14 @@ class PersonsListWidget extends StatelessWidget {
                       ),
                       IconButton(
                         splashRadius: 25.0,
-                        icon: const Icon(Icons.grid_view),
+                        icon: ValueListenableBuilder<bool>(
+                          valueListenable: isListView,
+                          builder: (context, isListViewMode, _) {
+                            return isListViewMode
+                                ? const Icon(Icons.list_outlined)
+                                : const Icon(Icons.grid_view);
+                          },
+                        ),
                         iconSize: 28,
                         color: AppColors.neutral4,
                         onPressed: () {

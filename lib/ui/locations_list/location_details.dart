@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
+import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/datas/location.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
 
@@ -17,7 +18,10 @@ class LocationDetails extends StatelessWidget {
       backgroundColor: AppColors.ligtTheme,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.chevron_left),
+          icon: const Icon(
+            Icons.chevron_left,
+            size: 36,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -32,13 +36,21 @@ class LocationDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${arguments.name}'),
+              Text(
+                '${arguments.name}',
+                style: AppStyles.s20w500,
+              ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('${arguments.type} \u2022 ${arguments.dimension}'),
+              Text(
+                '${arguments.type} \u2022 ${arguments.dimension}',
+                style: AppStyles.s14w400.copyWith(
+                  color: AppColors.neutral4,
+                ),
+              ),
             ],
           ),
           Row(
@@ -46,6 +58,7 @@ class LocationDetails extends StatelessWidget {
             children: [
               Text(
                 '${S.of(context).aired}: $dateFormat',
+                style: AppStyles.s14w400,
               ),
             ],
           ),

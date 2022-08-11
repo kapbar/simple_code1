@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:simple_code_lesson_2/constants/app_colors.dart';
+import 'package:simple_code_lesson_2/constants/app_styles.dart';
 import 'package:simple_code_lesson_2/datas/location.dart';
 
 class LocationListItem extends StatelessWidget {
@@ -26,14 +28,22 @@ class LocationListItem extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: Text('${locationList[index].type}'),
+                      child: Text(
+                        '${locationList[index].type}',
+                        style: AppStyles.s16w400.copyWith(
+                          color: AppColors.neutral4,
+                        ),
+                      ),
                     ),
                   ],
                 ),
                 Row(
                   children: [
                     Expanded(
-                      child: Text('${locationList[index].name}'),
+                      child: Text(
+                        '${locationList[index].name}',
+                        style: AppStyles.s16w500,
+                      ),
                     ),
                     const Icon(Icons.chevron_right),
                   ],
@@ -41,7 +51,10 @@ class LocationListItem extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: Text('${locationList[index].dimension}'),
+                      child: Text(
+                        '${locationList[index].dimension}',
+                        style: AppStyles.s12w400,
+                      ),
                     ),
                   ],
                 ),
