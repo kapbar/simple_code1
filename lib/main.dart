@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
+import 'package:simple_code_lesson_2/ui/locations_list/location_details.dart';
+import 'package:simple_code_lesson_2/ui/locations_list/locations_list.dart';
 import 'package:simple_code_lesson_2/widgets/init_widget.dart';
 import 'package:simple_code_lesson_2/ui/settings_screen.dart';
 import 'package:simple_code_lesson_2/ui/login/login_screen.dart';
@@ -43,8 +45,10 @@ class MyApp extends StatelessWidget {
         routes: {
           'splash': (context) => const SplashScreen(),
           '/': (context) => const LoginScreen(),
-          '/home': (context) => const SettingsScreen(),
+          '/settings': (context) => const SettingsScreen(),
           '/persons': (context) => const PersonsListWidget(),
+          '/locations': (context) => const LocationsList(),
+          '/locations/details': (context) => const LocationDetails(),
         },
         initialRoute: 'splash',
       ),

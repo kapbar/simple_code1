@@ -270,6 +270,16 @@ class S {
     );
   }
 
+  /// `Locations not found`
+  String get locationsListIsEmpty {
+    return Intl.message(
+      'Locations not found',
+      name: 'locationsListIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Something went wrong :-(`
   String get somethingWentWrong {
     return Intl.message(
@@ -290,6 +300,16 @@ class S {
     );
   }
 
+  /// `Total locations: {total}`
+  String locationsTotal(Object total) {
+    return Intl.message(
+      'Total locations: $total',
+      name: 'locationsTotal',
+      desc: '',
+      args: [total],
+    );
+  }
+
   /// `No data`
   String get noData {
     return Intl.message(
@@ -305,6 +325,16 @@ class S {
     return Intl.message(
       'Find a person',
       name: 'findPerson',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Find a location`
+  String get findLocation {
+    return Intl.message(
+      'Find a location',
+      name: 'findLocation',
       desc: '',
       args: [],
     );
@@ -355,6 +385,26 @@ class S {
     return Intl.message(
       'Persons',
       name: 'persons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Locations`
+  String get locations {
+    return Intl.message(
+      'Locations',
+      name: 'locations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aired`
+  String get aired {
+    return Intl.message(
+      'Aired',
+      name: 'aired',
       desc: '',
       args: [],
     );

@@ -4,6 +4,11 @@
             "total": {}
         }
     },
+    "@locationsTotal": {
+        "placeholders": {
+            "total": {}
+        }
+    },
     "counterValue": "Counter value",
     "settings": "Settings",
     "inputLoginAndPassword": "Input login and password",
@@ -26,14 +31,19 @@
     "man": "Human",
     "alien": "Alien",
     "personsListIsEmpty": "Persons not found",
+    "locationsListIsEmpty": "Locations not found",
     "somethingWentWrong": "Something went wrong :-(",
     "personsTotal": "Total persons: {total}",
+    "locationsTotal": "Total locations: {total}",
     "noData": "No data",
     "findPerson": "Find a person",
+    "findLocation": "Find a location",
     "dontHaveAnAccountHint": "Don't have an account yet",
     "create": "Create",
     "error": "Error",
     "wrongLoginOrPassword": "Wrong login or password",
     "persons": "Persons",
+    "locations": "Locations",
+    "aired": "Aired",
     "ok": "Ok"
 }

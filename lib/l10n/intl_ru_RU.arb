@@ -4,6 +4,11 @@
             "total": {}
         }
     },
+    "@locationsTotal": {
+        "placeholders": {
+            "total": {}
+        }
+    },
     "counterValue": "Значение счетчика",
     "settings": "Настройки",
     "inputLoginAndPassword": "Введите логин и пароль",
@@ -26,14 +31,19 @@
     "man": "Человек",
     "alien": "Пришелец",
     "personsListIsEmpty": "Персонажей не найдено",
+    "locationsListIsEmpty": "Локации не найдены",
     "somethingWentWrong": "Что-то пошло не так :-(",
     "personsTotal": "Всего персонажей: {total}",
+    "locationsTotal": "Всего локаций: {total}",
     "noData": "Нет данных",
     "findPerson": "Найти персонажа",
+    "findLocation": "Найти локацию",
     "dontHaveAnAccountHint": "Ещё нет аккаунта",
     "create": "Создать",
     "error": "Ошибка",
     "wrongLoginOrPassword": "Введен неверный логин или пароль",
     "persons": "Персонажи",
+    "locations": "Локации",
+    "aired": "Премьера",
     "ok": "Ok"
 }

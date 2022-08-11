@@ -20,10 +20,13 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(total) => "Total persons: ${total}";
+  static String m0(total) => "Total locations: ${total}";
+
+  static String m1(total) => "Total persons: ${total}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aired": MessageLookupByLibrary.simpleMessage("Aired"),
         "alien": MessageLookupByLibrary.simpleMessage("Alien"),
         "alive": MessageLookupByLibrary.simpleMessage("Alive"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
@@ -35,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "female": MessageLookupByLibrary.simpleMessage("Women`s"),
+        "findLocation": MessageLookupByLibrary.simpleMessage("Find a location"),
         "findPerson": MessageLookupByLibrary.simpleMessage("Find a person"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Enter login"),
@@ -47,6 +51,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "inputLoginAndPassword":
             MessageLookupByLibrary.simpleMessage("Input login and password"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "locations": MessageLookupByLibrary.simpleMessage("Locations"),
+        "locationsListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Locations not found"),
+        "locationsTotal": m0,
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "male": MessageLookupByLibrary.simpleMessage("Man`s"),
         "man": MessageLookupByLibrary.simpleMessage("Human"),
@@ -56,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "persons": MessageLookupByLibrary.simpleMessage("Persons"),
         "personsListIsEmpty":
             MessageLookupByLibrary.simpleMessage("Persons not found"),
-        "personsTotal": m0,
+        "personsTotal": m1,
         "russian": MessageLookupByLibrary.simpleMessage("Russian"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),

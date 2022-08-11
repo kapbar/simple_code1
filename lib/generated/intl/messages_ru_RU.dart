@@ -20,10 +20,13 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru_RU';
 
-  static String m0(total) => "Всего персонажей: ${total}";
+  static String m0(total) => "Всего локаций: ${total}";
+
+  static String m1(total) => "Всего персонажей: ${total}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aired": MessageLookupByLibrary.simpleMessage("Премьера"),
         "alien": MessageLookupByLibrary.simpleMessage("Пришелец"),
         "alive": MessageLookupByLibrary.simpleMessage("Живой"),
         "close": MessageLookupByLibrary.simpleMessage("Закрыть"),
@@ -36,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "english": MessageLookupByLibrary.simpleMessage("Английский"),
         "error": MessageLookupByLibrary.simpleMessage("Ошибка"),
         "female": MessageLookupByLibrary.simpleMessage("Женский"),
+        "findLocation": MessageLookupByLibrary.simpleMessage("Найти локацию"),
         "findPerson": MessageLookupByLibrary.simpleMessage("Найти персонажа"),
         "inputErrorCheckLogin":
             MessageLookupByLibrary.simpleMessage("Введите логин"),
@@ -48,6 +52,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "inputLoginAndPassword":
             MessageLookupByLibrary.simpleMessage("Введите логин и пароль"),
         "language": MessageLookupByLibrary.simpleMessage("Язык"),
+        "locations": MessageLookupByLibrary.simpleMessage("Локации"),
+        "locationsListIsEmpty":
+            MessageLookupByLibrary.simpleMessage("Локации не найдены"),
+        "locationsTotal": m0,
         "login": MessageLookupByLibrary.simpleMessage("Логин"),
         "male": MessageLookupByLibrary.simpleMessage("Мужской"),
         "man": MessageLookupByLibrary.simpleMessage("Человек"),
@@ -57,7 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "persons": MessageLookupByLibrary.simpleMessage("Персонажи"),
         "personsListIsEmpty":
             MessageLookupByLibrary.simpleMessage("Персонажей не найдено"),
-        "personsTotal": m0,
+        "personsTotal": m1,
         "russian": MessageLookupByLibrary.simpleMessage("Русский"),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),

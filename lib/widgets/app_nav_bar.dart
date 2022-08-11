@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:simple_code_lesson_2/constants/app_assets.dart';
 import 'package:simple_code_lesson_2/constants/app_colors.dart';
 import 'package:simple_code_lesson_2/generated/l10n.dart';
+import 'package:simple_code_lesson_2/ui/locations_list/locations_list.dart';
 import 'package:simple_code_lesson_2/ui/persons_list/persons_list_widget.dart';
 import 'package:simple_code_lesson_2/ui/settings_screen.dart';
 
@@ -50,6 +51,10 @@ class AppNavBar extends StatelessWidget {
             label: S.of(context).persons,
           ),
           BottomNavigationBarItem(
+            icon: const Icon(Icons.airlines_outlined),
+            label: S.of(context).locations,
+          ),
+          BottomNavigationBarItem(
             icon: const Icon(Icons.settings_outlined),
             label: S.of(context).settings,
           ),
@@ -63,10 +68,15 @@ class AppNavBar extends StatelessWidget {
             );
           } else if (index == 1) {
             Navigator.of(context).pushAndRemoveUntil(
+              _createRoute(const LocationsList()),
+              (route) => false,
+            );
+          } else if (index == 2) {
+            Navigator.of(context).pushAndRemoveUntil(
               _createRoute(const SettingsScreen()),
               (route) => false,
             );
-          }
+          } 
         },
       ),
     );
