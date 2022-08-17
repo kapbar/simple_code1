@@ -32,6 +32,7 @@
     "alien": "Пришелец",
     "personsListIsEmpty": "Персонажей не найдено",
     "locationsListIsEmpty": "Локации не найдены",
+    "episodesListIsEmpty": "Эпизоды не найдены",
     "somethingWentWrong": "Что-то пошло не так :-(",
     "personsTotal": "Всего персонажей: {total}",
     "locationsTotal": "Всего локаций: {total}",
@@ -44,6 +45,7 @@
     "wrongLoginOrPassword": "Введен неверный логин или пароль",
     "persons": "Персонажи",
     "locations": "Локации",
+    "episodes": "Эпизоды",
     "aired": "Премьера",
     "ok": "Ok"
 }

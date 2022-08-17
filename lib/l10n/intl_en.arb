@@ -32,6 +32,7 @@
     "alien": "Alien",
     "personsListIsEmpty": "Persons not found",
     "locationsListIsEmpty": "Locations not found",
+    "episodesListIsEmpty": "Episodes not found",
     "somethingWentWrong": "Something went wrong :-(",
     "personsTotal": "Total persons: {total}",
     "locationsTotal": "Total locations: {total}",
@@ -44,6 +45,7 @@
     "wrongLoginOrPassword": "Wrong login or password",
     "persons": "Persons",
     "locations": "Locations",
+    "episodes": "Episodes",
     "aired": "Aired",
     "ok": "Ok"
 }

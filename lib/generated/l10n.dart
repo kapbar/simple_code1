@@ -280,6 +280,16 @@ class S {
     );
   }
 
+  /// `Episodes not found`
+  String get episodesListIsEmpty {
+    return Intl.message(
+      'Episodes not found',
+      name: 'episodesListIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Something went wrong :-(`
   String get somethingWentWrong {
     return Intl.message(
@@ -395,6 +405,16 @@ class S {
     return Intl.message(
       'Locations',
       name: 'locations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Episodes`
+  String get episodes {
+    return Intl.message(
+      'Episodes',
+      name: 'episodes',
       desc: '',
       args: [],
     );
