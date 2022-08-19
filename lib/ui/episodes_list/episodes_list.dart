@@ -51,15 +51,15 @@ class EpisodesList extends StatelessWidget {
                           );
                         },
                         buildWhen: (previous, current) {
-                          final previousDataLength = previous.mapOrNull(
-                            data: (state) => state.data.length,
-                          );
-                          final currentDataLength = current.mapOrNull(
-                            data: (state) => state.data.length,
-                          );
                           if (previous.runtimeType != current.runtimeType) {
                             return true;
                           } else {
+                            final previousDataLength = previous.mapOrNull(
+                              data: (state) => state.data.length,
+                            );
+                            final currentDataLength = current.mapOrNull(
+                              data: (state) => state.data.length,
+                            );
                             return previousDataLength != currentDataLength;
                           }
                         },
@@ -80,7 +80,9 @@ class EpisodesList extends StatelessWidget {
                   left: 0,
                   right: 0,
                   child: isLoading
-                      ? const LinearProgressIndicator()
+                      ? const LinearProgressIndicator(
+                          color: AppColors.primary,
+                        )
                       : const SizedBox.shrink(),
                 );
               },
@@ -108,3 +110,5 @@ class EpisodesList extends StatelessWidget {
     );
   }
 }
+
+

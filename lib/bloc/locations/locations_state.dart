@@ -5,9 +5,12 @@ part 'locations_state.freezed.dart';
 
 @freezed
 class StateBlocLocations with _$StateBlocLocations {
+  const factory StateBlocLocations.data({
+    required List<Location> data,
+    @Default(false) bool isLoading,
+    String? errorMessage,
+  }) = StateLocationsData;
   const factory StateBlocLocations.initial() = StateLocationsInitial;
   const factory StateBlocLocations.loading() = StateLocationsLoading;
-  const factory StateBlocLocations.data({required List<Location> data}) =
-      StateLocationsData;
   const factory StateBlocLocations.error(String error) = StateLocationsError;
 }

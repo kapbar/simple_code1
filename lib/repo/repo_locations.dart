@@ -9,6 +9,26 @@ class RepoLocations {
 
   RepoLocations({required this.api});
 
+  Future<ResultRepoLocations> nextPage(int page) async {
+    try {
+      final result = await api.dio.get('/location?page=$page');
+      final bool isEndOfData = result.data['info']['next'] == null;
+
+      final List json = result.data['results'] ?? [];
+      final list = json.map((item) => Location.fromJson(item));
+
+      return ResultRepoLocations(
+        locationsList: list.toList(),
+        isEndOfData: isEndOfData,
+      );
+    } catch (error) {
+      print('🏐 Error : $error');
+      return ResultRepoLocations(
+        errorMessage: S.current.somethingWentWrong,
+      );
+    }
+  }
+
   Future<ResultRepoLocations> filterByName(String name) async {
     try {
       final result = await api.dio.get(
@@ -37,8 +57,10 @@ class RepoLocations {
 class ResultRepoLocations {
   final String? errorMessage;
   final List<Location>? locationsList;
+  final bool? isEndOfData;
 
   ResultRepoLocations({
+    this.isEndOfData,
     this.errorMessage,
     this.locationsList,
   });

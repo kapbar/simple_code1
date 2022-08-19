@@ -7,3 +7,5 @@ class EventLocationsFilterByName extends EventBlocLocations {
 
   final String name;
 }
+
+class EventLocationsNextPage extends EventBlocLocations {}

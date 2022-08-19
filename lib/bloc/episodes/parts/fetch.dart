@@ -16,5 +16,7 @@ extension Fetch on BlocEpisodes {
     emit(
       StateBlocEpisodes.data(data: result.episodes!),
     );
+    _currentPage = 1;
+    _isEndOfData = result.isEndOfData!;
   }
 }

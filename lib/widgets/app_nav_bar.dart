@@ -60,7 +60,10 @@ class AppNavBar extends StatelessWidget {
             label: S.of(context).locations,
           ),
           BottomNavigationBarItem(
-            icon: const Icon(Icons.tv_outlined),
+            icon: SvgPicture.asset(
+              AppAssets.svg.episodes,
+              color: current == 2 ? AppColors.primary : AppColors.neutral2,
+            ),
             label: S.of(context).episodes,
           ),
           BottomNavigationBarItem(

@@ -18,50 +18,54 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$StateBlocLocations {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Location> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Location> data) data,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsInitial value) initial,
     required TResult Function(StateLocationsLoading value) loading,
-    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
     required TResult orElse(),
   }) =>
@@ -83,6 +87,192 @@ class _$StateBlocLocationsCopyWithImpl<$Res>
   final StateBlocLocations _value;
   // ignore: unused_field
   final $Res Function(StateBlocLocations) _then;
+}
+
+/// @nodoc
+abstract class _$$StateLocationsDataCopyWith<$Res> {
+  factory _$$StateLocationsDataCopyWith(_$StateLocationsData value,
+          $Res Function(_$StateLocationsData) then) =
+      __$$StateLocationsDataCopyWithImpl<$Res>;
+  $Res call({List<Location> data, bool isLoading, String? errorMessage});
+}
+
+/// @nodoc
+class __$$StateLocationsDataCopyWithImpl<$Res>
+    extends _$StateBlocLocationsCopyWithImpl<$Res>
+    implements _$$StateLocationsDataCopyWith<$Res> {
+  __$$StateLocationsDataCopyWithImpl(
+      _$StateLocationsData _value, $Res Function(_$StateLocationsData) _then)
+      : super(_value, (v) => _then(v as _$StateLocationsData));
+
+  @override
+  _$StateLocationsData get _value => super._value as _$StateLocationsData;
+
+  @override
+  $Res call({
+    Object? data = freezed,
+    Object? isLoading = freezed,
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$StateLocationsData(
+      data: data == freezed
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Location>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StateLocationsData implements StateLocationsData {
+  const _$StateLocationsData(
+      {required final List<Location> data,
+      this.isLoading = false,
+      this.errorMessage})
+      : _data = data;
+
+  final List<Location> _data;
+  @override
+  List<Location> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'StateBlocLocations.data(data: $data, isLoading: $isLoading, errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StateLocationsData &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_data),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(errorMessage));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$StateLocationsDataCopyWith<_$StateLocationsData> get copyWith =>
+      __$$StateLocationsDataCopyWithImpl<_$StateLocationsData>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Location> data, bool isLoading, String? errorMessage)
+        data,
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String error) error,
+  }) {
+    return data(this.data, isLoading, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+  }) {
+    return data?.call(this.data, isLoading, errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (data != null) {
+      return data(this.data, isLoading, errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StateLocationsData value) data,
+    required TResult Function(StateLocationsInitial value) initial,
+    required TResult Function(StateLocationsLoading value) loading,
+    required TResult Function(StateLocationsError value) error,
+  }) {
+    return data(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
+    TResult Function(StateLocationsInitial value)? initial,
+    TResult Function(StateLocationsLoading value)? loading,
+    TResult Function(StateLocationsError value)? error,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
+    TResult Function(StateLocationsInitial value)? initial,
+    TResult Function(StateLocationsLoading value)? loading,
+    TResult Function(StateLocationsError value)? error,
+    required TResult orElse(),
+  }) {
+    if (data != null) {
+      return data(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StateLocationsData implements StateBlocLocations {
+  const factory StateLocationsData(
+      {required final List<Location> data,
+      final bool isLoading,
+      final String? errorMessage}) = _$StateLocationsData;
+
+  List<Location> get data;
+  bool get isLoading;
+  String? get errorMessage;
+  @JsonKey(ignore: true)
+  _$$StateLocationsDataCopyWith<_$StateLocationsData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -126,9 +316,11 @@ class _$StateLocationsInitial implements StateLocationsInitial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Location> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Location> data) data,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -137,9 +329,10 @@ class _$StateLocationsInitial implements StateLocationsInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
   }) {
     return initial?.call();
@@ -148,9 +341,10 @@ class _$StateLocationsInitial implements StateLocationsInitial {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -163,9 +357,9 @@ class _$StateLocationsInitial implements StateLocationsInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsInitial value) initial,
     required TResult Function(StateLocationsLoading value) loading,
-    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsError value) error,
   }) {
     return initial(this);
@@ -174,9 +368,9 @@ class _$StateLocationsInitial implements StateLocationsInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
   }) {
     return initial?.call(this);
@@ -185,9 +379,9 @@ class _$StateLocationsInitial implements StateLocationsInitial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
     required TResult orElse(),
   }) {
@@ -243,9 +437,11 @@ class _$StateLocationsLoading implements StateLocationsLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Location> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Location> data) data,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -254,9 +450,10 @@ class _$StateLocationsLoading implements StateLocationsLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
   }) {
     return loading?.call();
@@ -265,9 +462,10 @@ class _$StateLocationsLoading implements StateLocationsLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -280,9 +478,9 @@ class _$StateLocationsLoading implements StateLocationsLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsInitial value) initial,
     required TResult Function(StateLocationsLoading value) loading,
-    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsError value) error,
   }) {
     return loading(this);
@@ -291,9 +489,9 @@ class _$StateLocationsLoading implements StateLocationsLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
   }) {
     return loading?.call(this);
@@ -302,9 +500,9 @@ class _$StateLocationsLoading implements StateLocationsLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
     required TResult orElse(),
   }) {
@@ -317,159 +515,6 @@ class _$StateLocationsLoading implements StateLocationsLoading {
 
 abstract class StateLocationsLoading implements StateBlocLocations {
   const factory StateLocationsLoading() = _$StateLocationsLoading;
-}
-
-/// @nodoc
-abstract class _$$StateLocationsDataCopyWith<$Res> {
-  factory _$$StateLocationsDataCopyWith(_$StateLocationsData value,
-          $Res Function(_$StateLocationsData) then) =
-      __$$StateLocationsDataCopyWithImpl<$Res>;
-  $Res call({List<Location> data});
-}
-
-/// @nodoc
-class __$$StateLocationsDataCopyWithImpl<$Res>
-    extends _$StateBlocLocationsCopyWithImpl<$Res>
-    implements _$$StateLocationsDataCopyWith<$Res> {
-  __$$StateLocationsDataCopyWithImpl(
-      _$StateLocationsData _value, $Res Function(_$StateLocationsData) _then)
-      : super(_value, (v) => _then(v as _$StateLocationsData));
-
-  @override
-  _$StateLocationsData get _value => super._value as _$StateLocationsData;
-
-  @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(_$StateLocationsData(
-      data: data == freezed
-          ? _value._data
-          : data // ignore: cast_nullable_to_non_nullable
-              as List<Location>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$StateLocationsData implements StateLocationsData {
-  const _$StateLocationsData({required final List<Location> data})
-      : _data = data;
-
-  final List<Location> _data;
-  @override
-  List<Location> get data {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
-
-  @override
-  String toString() {
-    return 'StateBlocLocations.data(data: $data)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StateLocationsData &&
-            const DeepCollectionEquality().equals(other._data, _data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$StateLocationsDataCopyWith<_$StateLocationsData> get copyWith =>
-      __$$StateLocationsDataCopyWithImpl<_$StateLocationsData>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(List<Location> data) data,
-    required TResult Function(String error) error,
-  }) {
-    return data(this.data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
-    TResult Function(String error)? error,
-  }) {
-    return data?.call(this.data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
-    TResult Function(String error)? error,
-    required TResult orElse(),
-  }) {
-    if (data != null) {
-      return data(this.data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(StateLocationsInitial value) initial,
-    required TResult Function(StateLocationsLoading value) loading,
-    required TResult Function(StateLocationsData value) data,
-    required TResult Function(StateLocationsError value) error,
-  }) {
-    return data(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(StateLocationsInitial value)? initial,
-    TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
-    TResult Function(StateLocationsError value)? error,
-  }) {
-    return data?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(StateLocationsInitial value)? initial,
-    TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
-    TResult Function(StateLocationsError value)? error,
-    required TResult orElse(),
-  }) {
-    if (data != null) {
-      return data(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StateLocationsData implements StateBlocLocations {
-  const factory StateLocationsData({required final List<Location> data}) =
-      _$StateLocationsData;
-
-  List<Location> get data;
-  @JsonKey(ignore: true)
-  _$$StateLocationsDataCopyWith<_$StateLocationsData> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -538,9 +583,11 @@ class _$StateLocationsError implements StateLocationsError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Location> data, bool isLoading, String? errorMessage)
+        data,
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<Location> data) data,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -549,9 +596,10 @@ class _$StateLocationsError implements StateLocationsError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -560,9 +608,10 @@ class _$StateLocationsError implements StateLocationsError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Location> data, bool isLoading, String? errorMessage)?
+        data,
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<Location> data)? data,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -575,9 +624,9 @@ class _$StateLocationsError implements StateLocationsError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsInitial value) initial,
     required TResult Function(StateLocationsLoading value) loading,
-    required TResult Function(StateLocationsData value) data,
     required TResult Function(StateLocationsError value) error,
   }) {
     return error(this);
@@ -586,9 +635,9 @@ class _$StateLocationsError implements StateLocationsError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
   }) {
     return error?.call(this);
@@ -597,9 +646,9 @@ class _$StateLocationsError implements StateLocationsError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsInitial value)? initial,
     TResult Function(StateLocationsLoading value)? loading,
-    TResult Function(StateLocationsData value)? data,
     TResult Function(StateLocationsError value)? error,
     required TResult orElse(),
   }) {
