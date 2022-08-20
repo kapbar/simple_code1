@@ -20,8 +20,6 @@ class BlocEpisodes extends Bloc<EventBlocEpisodes, StateBlocEpisodes> {
   final RepoEpisodes repo;
 
   int _currentPage = 1;
-
   bool _isEndOfData = false;
-
   bool _isInProgress = false;
 }

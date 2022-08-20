@@ -9,9 +9,9 @@ class RepoLocations {
 
   RepoLocations({required this.api});
 
-  Future<ResultRepoLocations> nextPage(int page) async {
+  Future<ResultRepoLocations> nextPage(int page, String name) async {
     try {
-      final result = await api.dio.get('/location?page=$page');
+      final result = await api.dio.get('/location?page=$page&name=$name');
       final bool isEndOfData = result.data['info']['next'] == null;
 
       final List json = result.data['results'] ?? [];
